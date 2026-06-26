@@ -61,8 +61,20 @@ const entryServer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   default: handleRequest,
   streamTimeout
 }, Symbol.toStringTag, { value: "Module" }));
-const appStyles = "/assets/app-BOiGwM3F.css";
+const appStyles = "/assets/app-D0Gv2PL1.css";
 const links = () => [{
+  rel: "icon",
+  type: "image/svg+xml",
+  href: "/favicon.svg"
+}, {
+  rel: "icon",
+  type: "image/png",
+  href: "/images/profile.png",
+  sizes: "64x64"
+}, {
+  rel: "apple-touch-icon",
+  href: "/images/profile.png"
+}, {
   rel: "preconnect",
   href: "https://fonts.googleapis.com"
 }, {
@@ -120,7 +132,7 @@ const ErrorBoundary = UNSAFE_withErrorBoundaryProps(function ErrorBoundary2({
     children: [/* @__PURE__ */ jsx("h1", {
       style: {
         fontFamily: '"Instrument Serif", serif',
-        fontSize: 120,
+        fontSize: 122,
         lineHeight: 1,
         margin: 0
       },
@@ -128,7 +140,7 @@ const ErrorBoundary = UNSAFE_withErrorBoundaryProps(function ErrorBoundary2({
     }), /* @__PURE__ */ jsx("p", {
       style: {
         marginTop: 16,
-        fontSize: 16,
+        fontSize: 18,
         color: "#5a5a58"
       },
       children: details
@@ -136,7 +148,7 @@ const ErrorBoundary = UNSAFE_withErrorBoundaryProps(function ErrorBoundary2({
       href: "/",
       style: {
         marginTop: 32,
-        fontSize: 12,
+        fontSize: 14,
         letterSpacing: "0.06em",
         textTransform: "uppercase",
         borderBottom: "1px solid currentColor"
@@ -248,9 +260,16 @@ function ScrollProgress() {
 }
 const portfolio = {
   role: "Senior Frontend Engineer",
-  location: "Lagos, Nigeria",
+  location: "Remote · Worldwide",
   email: "ajaoabdulsamad2000@gmail.com",
-  available: "Available · Q3 2026",
+  socials: {
+    github: "https://github.com/ajaoseyi",
+    linkedin: "https://linkedin.com/in/abdulsamad-ajao-9279a11b8",
+    twitter: "https://x.com/Abdulsamad_O",
+    devto: "https://dev.to/ajaoseyi"
+  },
+  resume: "/Abdulsamad_Ajao_Resume.pdf",
+  available: "Available · Full-time & Freelance",
   metrics: [
     { v: "40%", k: "avg perf uplift" },
     { v: "99.8%", k: "payment success" },
@@ -267,121 +286,176 @@ const portfolio = {
     "Ethers.js",
     "GraphQL",
     "Node.js",
-    "Jest"
+    "Jest",
+    "WordPress"
   ],
   projects: [
     {
-      id: "foodcourt",
-      n: "01",
-      cat: "Food-Tech",
-      name: "Foodcourt",
-      year: "2024",
-      role: "Senior Frontend Engineer · Lead",
-      stack: ["React", "TypeScript", "Socket.IO", "Paystack", "TailwindCSS"],
-      desc: "A comprehensive food-tech platform optimizing kitchen operations and customer experience. Real-time order management, payment integration, and analytics dashboard.",
-      tagline: "Real-time orders for 200K monthly diners.",
-      problem: "Kitchens were drowning in tablet alerts, paper tickets and three different POS apps. Order accuracy hovered at 91%; refund volume was eating margin.",
-      approach: "I rebuilt the operator surface as a single Socket.IO-driven console — one screen, keyboard-first, with optimistic UI and a deterministic state machine for every order. Payments moved to Paystack with idempotent retries.",
-      outcomes: [
-        { v: "99.8%", k: "payment success rate" },
-        { v: "40%", k: "faster perceived load" },
-        { v: "200K", k: "monthly orders served" },
-        { v: "91 → 99%", k: "order accuracy" }
-      ],
-      highlights: [
-        "Architected a real-time order pipeline using Socket.IO with reconnection-safe event log.",
-        "Migrated 14 legacy class components to typed function components; cut bundle 28%.",
-        "Designed a kitchen display system used across 60+ locations."
-      ],
-      url: "foodcourt.ng"
-    },
-    {
       id: "soundturf",
-      n: "02",
+      n: "01",
       cat: "Music / Entertainment",
       name: "Soundturf",
       year: "2023",
       role: "Frontend Engineer",
-      stack: ["React", "Ethers.js", "Web3", "Wagmi", "Blockchain"],
-      desc: "Music streaming platform with playlist management, seamless playback, and on-chain royalty distribution.",
-      tagline: "On-chain royalties without the wallet anxiety.",
-      problem: "Independent artists were waiting 90+ days for streaming royalty payouts. Existing Web3 players asked listeners to think about gas before pressing play.",
-      approach: "I designed a hybrid wallet flow — listen first, sign later. Royalty splits resolve on-chain via Ethers.js, but the player UX is indistinguishable from Spotify until value actually moves.",
+      stack: ["React", "TypeScript", "Socket.IO", "REST API", "Geolocation API"],
+      desc: "Interactive party experience where the crowd is in control of the music. Real-time song voting, geolocation-based venue detection, and smart search algorithms keep the dance floor moving.",
+      tagline: "The crowd controls the playlist — live, every song.",
+      problem: "At parties and events, the DJ or a single host always controlled the music — leaving the crowd no voice. Finding a venue or discovering what was playing nearby was impossible without being physically inside.",
+      approach: "Built a real-time voting and queue system on Socket.IO so every attendee can influence what plays next. Geolocation ties users to their venue automatically, and search algorithms surface songs by popularity, tempo, and crowd preference without manual curation.",
       outcomes: [
-        { v: "< 200ms", k: "time to first audio" },
-        { v: "12K", k: "wallets onboarded" },
-        { v: "0", k: "failed payout txns" },
-        { v: "4.7★", k: "app store rating" }
+        { v: "Real-time", k: "crowd song voting" },
+        { v: "<100ms", k: "socket event latency" },
+        { v: "Live", k: "geolocation venue detection" },
+        { v: "Zero", k: "manual DJ interventions needed" }
       ],
       highlights: [
-        "Built a gasless playlist system using meta-transactions.",
-        "Implemented gapless playback with Web Audio API + service worker prefetch.",
-        "Shipped a creator dashboard for real-time royalty tracking."
+        "Implemented real-time song voting and queue management using Socket.IO with optimistic UI updates.",
+        "Built geolocation features for automatic venue detection and proximity-based event discovery.",
+        "Designed search algorithms that surface songs by crowd votes, tempo, and listening patterns."
       ],
-      url: "soundturf.xyz"
+      url: "sound-turf.com",
+      images: {
+        hero: "/images/soundturf-hero.jpg",
+        logo: "/images/soundturf-logo.svg",
+        detail: [
+          "/images/soundturf-detail-1.jpg",
+          "/images/soundturf-detail-2.jpg"
+        ]
+      }
     },
     {
-      id: "figma-plugin",
-      n: "03",
+      id: "refine",
+      n: "05",
+      cat: "AI / Productivity Tools",
+      name: "Refine",
+      year: "2026",
+      role: "Full-Stack Engineer · Solo Build",
+      stack: ["React", "TypeScript", "Vite", "TipTap", "Node.js", "Express", "LangChain", "Socket.IO", "Groq (Llama 3)", "Google Docs API"],
+      desc: "An AI-powered writing assistant that merges grammar and style correction with self-hosted SEO auditing and readability scoring, so writers can polish prose and optimize it for search without juggling separate tools.",
+      tagline: "Write, polish, and rank — without leaving the editor.",
+      problem: "Writers had to bounce between a grammar checker, a separate SEO auditing tool, and Google Docs to ship a piece that was both well-written and search-ready — every round trip risked edits falling out of sync between the source doc and whatever tool was open.",
+      approach: "I built the editor in TipTap and wired it to a Node/Express backend where LangChain orchestrates a Groq-hosted Llama 3 model for grammar, sentence-structure, and keyword/heading analysis, alongside a self-hosted Flesch/Fog readability scorer. A Socket.IO layer keeps the editor and the Google Docs API in sync bidirectionally, so edits made in either surface update the other in real time.",
+      outcomes: [
+        { v: "Single pass", k: "grammar + SEO + readability" },
+        { v: "Real-time", k: "bidirectional Google Docs sync" },
+        { v: "Llama 3", k: "Groq-accelerated inference" },
+        { v: "Zero", k: "tool-switching to ship a draft" }
+      ],
+      highlights: [
+        "Built a LangChain-orchestrated backend that runs grammar, sentence-structure, and keyword-density analysis through a Groq-hosted Llama 3 model.",
+        "Implemented a self-hosted SEO and readability auditor — keyword density, heading hierarchy, and Flesch/Fog scoring — without relying on third-party SEO APIs.",
+        "Wired a Socket.IO-driven bidirectional sync with the Google Docs API so edits in the TipTap editor or the source doc never fall out of sync."
+      ],
+      url: "my-writing-assistant-production.up.railway.app",
+      images: {
+        hero: "/images/refine-mockup-one.png",
+        detail: [
+          "/images/refine-mockup-two.png",
+          "/images/refine-mockup-three.png",
+          "/images/refine-mockup-four.png",
+          "/images/refine-mockup-five.png"
+        ]
+      }
+    },
+    {
+      id: "lingo",
+      n: "02",
       cat: "Design Tools",
-      name: "Figma Plugin",
+      name: "Lingo",
       year: "2023",
       role: "Maker · Open source",
-      stack: ["TypeScript", "Figma Plugin API", "React", "Vite"],
-      desc: "Open-source plugin serving the design community — automates design system management and token hand-off.",
-      tagline: "Bridging the design–dev token gap.",
-      problem: "Teams were maintaining tokens twice — in Figma styles and in code. Hand-off was a copy-paste ritual nobody trusted.",
-      approach: "A bidirectional sync between Figma variables and a typed token JSON. Designers edit in Figma, engineers consume via the codegen CLI; conflicts surface as PRs.",
+      stack: ["Preact", "TailwindCSS", "Node.js", "Docker", "VPS"],
+      desc: "Lingo is an open-source design tool that helps designers and developers efficiently create and manage multiple language versions of their products. Lingo integrates directly into the Figma workflow, allowing designers to translate text elements without leaving their design environment.",
+      tagline: "Translate your designs without leaving Figma.",
+      problem: "Localising a Figma file for a new market meant manually duplicating frames and replacing every text layer — a process that broke as soon as copy changed, and kept design and translation teams permanently out of sync.",
+      approach: "Built a Figma plugin in Preact that surfaces a translation panel inline, hooks into the Figma Plugin API to read and write text nodes, and sends strings through a Node.js translation service on VPS. Docker keeps the translation model portable across environments.",
       outcomes: [
-        { v: "8.4K", k: "installs" },
+        { v: "8.4K", k: "plugin installs" },
         { v: "320", k: "GitHub stars" },
-        { v: "< 60s", k: "sync to repo" },
-        { v: "23", k: "contributors" }
+        { v: "Zero", k: "context switching for designers" },
+        { v: "23", k: "open-source contributors" }
       ],
       highlights: [
-        "Authored a typed token spec compatible with Style Dictionary.",
-        "Shipped a CLI that opens PRs with semantic diffs.",
-        "Maintained 92% test coverage on the core diff engine."
+        "Built the Figma plugin in Preact with a translation panel that reads and writes text nodes without leaving Figma.",
+        "Shipped a Node.js translation service containerised with Docker and deployed on VPS for language model inference.",
+        "Maintained an open-source repo with 23 contributors and 320 GitHub stars."
       ],
-      url: "figma.com/community/plugin/ajao"
+      url: "figma.com/community/plugin/ajao",
+      images: {
+        hero: "/images/lingo-hero.png",
+        logo: "/images/lingo-logo.png"
+      }
     },
     {
-      id: "tizzil",
-      n: "04",
-      cat: "E-Commerce",
-      name: "Tizzil",
-      year: "2022",
-      role: "Co-founder · Frontend Lead",
-      stack: ["React", "React Native", "Node.js", "GraphQL", "Apollo"],
-      desc: "Full-stack commerce platform connecting local vendors with customers. Cross-platform deployment for web and mobile.",
-      tagline: "One codebase, two storefronts, 1,200 vendors.",
-      problem: "Local vendors needed a storefront on web and mobile but couldn't pay for two builds. Existing platforms felt foreign and charged in dollars.",
-      approach: "A shared GraphQL schema with React on web and React Native on mobile, sharing 70% of business logic. Vendor onboarding designed for low-bandwidth and intermittent power.",
+      id: "buybox",
+      n: "03",
+      cat: "Tech Marketplace",
+      name: "Buybox",
+      year: "2024",
+      role: "Mobile Engineer · Vendor Dashboard Lead",
+      stack: ["Next.js", "React Native", "React", "REST APIs", "Payment Gateway", "TypeScript", "TailwindCSS", "SSR"],
+      desc: "A better way to buy, request, repair & upgrade your tech. BuyBox brings trusted vendors for new and renewed electronics into one app — discover devices, send custom requests, book a repair, or trade-in, with same-day delivery on eligible products.",
+      tagline: "One app for every stage of your device lifecycle.",
+      problem: "Consumers had no reliable way to discover certified vendors, request custom device orders, book repairs, or manage trade-ins without juggling three separate platforms. Vendor onboarding was manual and slow.",
+      approach: "I led development of the cross-platform mobile app in React Native, giving users a unified flow for browsing, requesting, and booking — then built the vendor dashboard in React so vendors could manage listings, repair slots, and same-day delivery queues from a single interface.",
       outcomes: [
-        { v: "1,200+", k: "active vendors" },
-        { v: "70%", k: "shared logic" },
-        { v: "< 90s", k: "vendor onboarding" },
-        { v: "4.6★", k: "play store rating" }
+        { v: "500+", k: "verified vendors onboarded" },
+        { v: "< 3 min", k: "average request-to-quote" },
+        { v: "4.8★", k: "app store rating" },
+        { v: "60%", k: "repeat order rate" }
       ],
       highlights: [
-        "Shipped offline-first cart with background sync via service workers.",
-        "Designed a single design language that scales web → mobile.",
-        "Co-led a team of 4 engineers from MVP to Series A."
+        "Built the React Native mobile app from scratch — browsing, custom requests, repair booking, and trade-in flows.",
+        "Designed and shipped a vendor dashboard for real-time order, inventory, and repair slot management.",
+        "Integrated same-day delivery scheduling with live order-tracking UI."
       ],
-      url: "tizzil.com"
+      url: "buybox.ng",
+      images: {
+        hero: "/images/buybox-mockup.jpeg",
+        logo: "/images/buybox-logo.png"
+      }
+    },
+    {
+      id: "void",
+      n: "04",
+      cat: "Media Agency",
+      name: "The Void",
+      year: "2025",
+      role: "Frontend Engineer · SEO Lead",
+      stack: ["Next.js", "CSS", "HLS / DASH", "Vercel", "WordPress"],
+      desc: "SEO-optimised landing page for Void Media Group — a creative media agency. Built to establish their digital footprint with adaptive video, pixel-perfect styling, and a 90+ Lighthouse score across all categories.",
+      tagline: "A digital footprint built to be found — and felt.",
+      problem: "Void Media Group had no web presence to match their creative reputation. They needed a landing page that communicated their identity instantly, ranked well on search engines from day one, and loaded fast enough not to lose the visitors it earned.",
+      approach: "I built the site in Next.js for SSR-first SEO, structured every page with semantic HTML and schema markup so search engines could parse intent immediately. The hero video uses HLS/DASH-based adaptive bitrate streaming — the browser negotiates the best quality for the available bandwidth, keeping the experience cinematic on any connection. All styling was hand-crafted in CSS with no UI framework overhead, which contributed directly to sub-second LCP and a clean 90+ across all four Lighthouse categories.",
+      outcomes: [
+        { v: "90+", k: "Lighthouse score all categories" },
+        { v: "Sub-1s", k: "Largest Contentful Paint" },
+        { v: "ABR", k: "adaptive video via HLS/DASH" },
+        { v: "SSR", k: "search-indexed from first crawl" }
+      ],
+      highlights: [
+        "Achieved 90+ Lighthouse scores across Performance, Accessibility, Best Practices, and SEO with zero third-party UI frameworks.",
+        "Implemented adaptive bitrate video streaming (HLS/DASH) so the hero reel plays at the highest quality the viewer's bandwidth supports.",
+        "Structured the entire site with semantic HTML and JSON-LD schema to ensure correct indexing and rich search results from the first crawl."
+      ],
+      url: "www.voidmediagrp.com",
+      images: {
+        logo: "/images/the-void-logo.png"
+      }
     }
   ],
   experience: [
     {
       role: "Senior Frontend Engineer",
       co: "Foodcourt",
-      loc: "Lagos, Nigeria",
+      loc: "Remote",
       dates: "Apr 2022 — Present",
       bullets: [
         "Improved app performance by 40% through modern React patterns and TypeScript.",
         "Architected real-time order management system using Socket.IO.",
         "Achieved 99.8% payment success rate with Paystack integration."
-      ]
+      ],
+      productUrl: "https://www.getfoodcourt.com"
     },
     {
       role: "Frontend Engineer",
@@ -389,21 +463,23 @@ const portfolio = {
       loc: "Remote",
       dates: "Jan 2024 — Apr 2025",
       bullets: [
-        "Maintained Lighthouse scores of 90+ across all projects.",
-        "Implemented blockchain payment solutions using Ethers.js.",
-        "Reduced bundle sizes by 30% through optimization strategies."
-      ]
+        "Built the frontend for VibesMeet, unifying digital content monetisation with physical and virtual event ticketing on one platform.",
+        "Shipped gated content, paid community access, and 1-on-1 experience flows so creators could monetise their following beyond a single revenue stream.",
+        "Implemented ticketing for meetups, workshops, and large conferences, turning an audience into real-world events."
+      ],
+      productUrl: "https://www.vibesmeet.com/"
     },
     {
-      role: "Co-Founder",
-      co: "Streetfair",
-      loc: "Lagos, Nigeria",
+      role: "Mobile & Dashboard Engineer",
+      co: "Buybox",
+      loc: "Remote",
       dates: "Apr 2021 — Apr 2025",
       bullets: [
-        "Architected full-stack apps using React.js and React Native.",
-        "Managed complete project lifecycle from requirements to deployment.",
-        "Built cross-platform solutions for web and mobile."
-      ]
+        "Built the React Native mobile app covering device discovery, custom requests, repair booking, and trade-in.",
+        "Developed the vendor dashboard in React — inventory, repair slot management, and same-day delivery queues.",
+        "Collaborated with product and design to ship end-to-end device lifecycle features for 500+ verified vendors."
+      ],
+      productUrl: "https://buybox.ng"
     }
   ],
   writing: [
@@ -462,7 +538,7 @@ function Nav() {
                     display: "flex",
                     alignItems: "center",
                     gap: 10,
-                    fontSize: 13,
+                    fontSize: 15,
                     fontWeight: 600,
                     letterSpacing: "-0.01em",
                     color: "var(--ink)"
@@ -470,7 +546,7 @@ function Nav() {
                   children: [
                     /* @__PURE__ */ jsx("div", { style: { width: 9, height: 9, background: "var(--ink)", flexShrink: 0 } }),
                     "A · Abdulsamad",
-                    /* @__PURE__ */ jsx("sup", { style: { fontWeight: 400, color: "var(--dim)", marginLeft: 2, fontSize: 10 }, children: "®" })
+                    /* @__PURE__ */ jsx("sup", { style: { fontWeight: 400, color: "var(--dim)", marginLeft: 2, fontSize: 12 }, children: "®" })
                   ]
                 }
               ),
@@ -479,7 +555,7 @@ function Nav() {
                 {
                   onClick: () => scrollTo(id),
                   style: {
-                    fontSize: 12,
+                    fontSize: 14,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                     color: "var(--dim)",
@@ -543,7 +619,7 @@ function Nav() {
           },
           style: {
             fontFamily: "var(--font-serif)",
-            fontSize: "clamp(40px, 10vw, 64px)",
+            fontSize: "clamp(42px, 10vw, 66px)",
             fontWeight: 400,
             letterSpacing: "-0.025em",
             color: "var(--ink)",
@@ -564,7 +640,7 @@ function Nav() {
           style: {
             marginTop: "auto",
             paddingTop: 32,
-            fontSize: 12,
+            fontSize: 14,
             color: "var(--dim)",
             letterSpacing: "0.06em",
             textTransform: "uppercase"
@@ -665,7 +741,7 @@ function Hero() {
             className: "serif-h",
             style: {
               gridColumn: "span 12",
-              fontSize: "clamp(56px, 11vw, 168px)",
+              fontSize: "clamp(58px, 11vw, 170px)",
               lineHeight: 0.92,
               marginTop: 32
             },
@@ -687,12 +763,7 @@ function Hero() {
                 borderTop: "1px solid var(--faint-rule)"
               },
               children: [
-                /* @__PURE__ */ jsxs("p", { style: { margin: 0, fontSize: 17, lineHeight: 1.55, color: "#222" }, children: [
-                  "Five years shipping production React across two continents. I currently lead frontend at",
-                  " ",
-                  /* @__PURE__ */ jsx("strong", { children: "Foodcourt" }),
-                  ", a Lagos food-tech moving 200K orders a month. Previously at Zerotech and Streetfair."
-                ] }),
+                /* @__PURE__ */ jsx("p", { style: { margin: 0, fontSize: 19, lineHeight: 1.55, color: "#222" }, children: "Five years shipping production across two continents" }),
                 /* @__PURE__ */ jsxs(
                   "button",
                   {
@@ -705,7 +776,7 @@ function Hero() {
                       alignItems: "center",
                       gap: 6,
                       marginTop: 18,
-                      fontSize: 13,
+                      fontSize: 15,
                       color: "var(--dim)",
                       letterSpacing: "0.04em",
                       textTransform: "uppercase"
@@ -740,7 +811,7 @@ function Hero() {
                   },
                   children: [
                     /* @__PURE__ */ jsx("span", { className: "kicker", children: m.k }),
-                    /* @__PURE__ */ jsx("span", { className: "serif-h", style: { fontSize: 24 }, children: m.v })
+                    /* @__PURE__ */ jsx("span", { className: "serif-h", style: { fontSize: 26 }, children: m.v })
                   ]
                 },
                 i
@@ -763,8 +834,8 @@ function Hero() {
                   "Featured · ",
                   featured.cat
                 ] }),
-                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 38, marginTop: 10, lineHeight: 1 }, children: featured.name }),
-                /* @__PURE__ */ jsxs("p", { style: { fontSize: 13, lineHeight: 1.5, color: "#c4c3be", marginTop: 12 }, children: [
+                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 40, marginTop: 10, lineHeight: 1 }, children: featured.name }),
+                /* @__PURE__ */ jsxs("p", { style: { fontSize: 15, lineHeight: 1.5, color: "#c4c3be", marginTop: 12 }, children: [
                   "Real-time order management, payment integration, analytics dashboard.",
                   " ",
                   /* @__PURE__ */ jsx("strong", { style: { color: "#fff" }, children: "99.8% payment success" }),
@@ -796,7 +867,8 @@ const LAYOUTS = [
   { col: "1 / span 7", big: true },
   { col: "8 / span 5", big: false },
   { col: "1 / span 5", big: false },
-  { col: "6 / span 7", big: true }
+  { col: "6 / span 7", big: true },
+  { col: "1 / span 12", big: true }
 ];
 function ProjectCard({ p, big, col }) {
   const [hovered, setHovered] = useState(false);
@@ -850,12 +922,12 @@ function ProjectCard({ p, big, col }) {
               /* @__PURE__ */ jsx(
                 "div",
                 {
-                  className: "serif-h",
+                  className: "serif-h work-watermark",
                   style: {
                     position: "absolute",
                     top: -28,
                     right: -16,
-                    fontSize: big ? 360 : 280,
+                    fontSize: big ? 362 : 282,
                     lineHeight: 0.8,
                     color: "#1a1a1a",
                     userSelect: "none",
@@ -865,7 +937,7 @@ function ProjectCard({ p, big, col }) {
                 }
               ),
               /* @__PURE__ */ jsxs("div", { style: { position: "relative", zIndex: 2 }, children: [
-                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: big ? 64 : 48, lineHeight: 1 }, children: p.name }),
+                /* @__PURE__ */ jsx("div", { className: "serif-h work-card-title", style: { fontSize: big ? 66 : 50, lineHeight: 1 }, children: p.name }),
                 /* @__PURE__ */ jsx("div", { className: "kicker", style: { color: "var(--dark-dim)", marginTop: 12 }, children: p.tagline })
               ] }),
               /* @__PURE__ */ jsx(
@@ -884,34 +956,21 @@ function ProjectCard({ p, big, col }) {
             ]
           }
         ),
-        /* @__PURE__ */ jsxs(
-          "div",
-          {
-            style: {
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              marginTop: 16,
-              gap: 16
-            },
-            children: [
-              /* @__PURE__ */ jsx("p", { style: { margin: 0, fontSize: 14, lineHeight: 1.55, color: "#222", maxWidth: 460 }, children: p.desc }),
-              /* @__PURE__ */ jsx(
-                "div",
-                {
-                  style: {
-                    display: "flex",
-                    gap: 10,
-                    flexWrap: "wrap",
-                    justifyContent: "flex-end",
-                    flexShrink: 0
-                  },
-                  children: p.stack.slice(0, 4).map((s) => /* @__PURE__ */ jsx("span", { className: "kicker", children: s }, s))
-                }
-              )
-            ]
-          }
-        )
+        /* @__PURE__ */ jsxs("div", { className: "work-card-meta", style: { marginTop: 16 }, children: [
+          /* @__PURE__ */ jsx("p", { className: "work-card-desc", style: { margin: 0, fontSize: 16, lineHeight: 1.55, color: "#222" }, children: p.desc }),
+          /* @__PURE__ */ jsx(
+            "div",
+            {
+              style: {
+                display: "flex",
+                gap: 10,
+                flexWrap: "wrap",
+                marginTop: 14
+              },
+              children: p.stack.slice(0, 4).map((s) => /* @__PURE__ */ jsx("span", { className: "kicker", children: s }, s))
+            }
+          )
+        ] })
       ] })
     }
   );
@@ -939,7 +998,7 @@ function Work() {
                 paddingTop: 14,
                 textAlign: "right"
               },
-              children: /* @__PURE__ */ jsx("span", { className: "kicker", children: "04 of 17 · 2022—2024" })
+              children: /* @__PURE__ */ jsx("span", { className: "kicker", children: "05 of 17 · 2022—2026" })
             }
           )
         ] }),
@@ -949,7 +1008,7 @@ function Work() {
             as: "h2",
             className: "serif-h",
             style: {
-              fontSize: "clamp(48px, 8vw, 112px)",
+              fontSize: "clamp(50px, 8vw, 114px)",
               lineHeight: 1,
               margin: "24px 0 40px"
             },
@@ -963,6 +1022,7 @@ function Work() {
         /* @__PURE__ */ jsx(
           "div",
           {
+            className: "work-grid",
             style: {
               display: "grid",
               gridTemplateColumns: "repeat(12, 1fr)",
@@ -1022,7 +1082,7 @@ function About() {
                 paddingTop: 14,
                 textAlign: "right"
               },
-              children: /* @__PURE__ */ jsx("span", { className: "kicker", style: { color: "var(--dark-dim)" }, children: "Lagos / Remote · Open to senior + staff roles" })
+              children: /* @__PURE__ */ jsx("span", { className: "kicker", style: { color: "var(--dark-dim)" }, children: "Worldwide · Remote-first · Open to full-time & freelance" })
             }
           )
         ] }),
@@ -1042,7 +1102,7 @@ function About() {
                 /* @__PURE__ */ jsx(
                   "img",
                   {
-                    src: "/images/profile.jpg",
+                    src: "/images/profile.png",
                     alt: "Abdulsamad Ajao",
                     style: {
                       position: "absolute",
@@ -1060,24 +1120,6 @@ function About() {
                 /* @__PURE__ */ jsx(
                   "div",
                   {
-                    className: "serif-h",
-                    style: {
-                      position: "absolute",
-                      inset: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: 280,
-                      color: "#0e0e0e",
-                      userSelect: "none",
-                      lineHeight: 1
-                    },
-                    children: "A"
-                  }
-                ),
-                /* @__PURE__ */ jsx(
-                  "div",
-                  {
                     className: "kicker",
                     style: {
                       position: "absolute",
@@ -1086,7 +1128,7 @@ function About() {
                       right: 18,
                       color: "var(--dark-dim)"
                     },
-                    children: "Abdulsamad Ajao — Lagos"
+                    children: "Abdulsamad Ajao — Remote"
                   }
                 )
               ]
@@ -1098,7 +1140,7 @@ function About() {
               {
                 className: "serif-h",
                 style: {
-                  fontSize: "clamp(40px, 6vw, 88px)",
+                  fontSize: "clamp(42px, 6vw, 90px)",
                   lineHeight: 1.15,
                   paddingBottom: 16
                 },
@@ -1122,8 +1164,8 @@ function About() {
                   gap: 36
                 },
                 children: [
-                  /* @__PURE__ */ jsx("p", { style: { margin: 0, fontSize: 16, lineHeight: 1.65, color: "var(--dark-text)" }, children: "I started writing JavaScript in a generator-powered office in Yaba in 2019. Six years later, I'm still chasing the same thing — interfaces that load before you notice they did." }),
-                  /* @__PURE__ */ jsx("p", { style: { margin: 0, fontSize: 16, lineHeight: 1.65, color: "var(--dark-text)" }, children: "Most of my work lives at the seams: the millisecond between tap and feedback, the retry that decides whether a meal arrives, the type system that keeps a small team honest. I care about Core Web Vitals because users in Lagos pay for every byte." })
+                  /* @__PURE__ */ jsx("p", { style: { margin: 0, fontSize: 18, lineHeight: 1.65, color: "var(--dark-text)" }, children: "I started writing JavaScript in a generator-powered office in Yaba in 2019. Six years later, I'm still chasing the same thing — interfaces that load before you notice they did." }),
+                  /* @__PURE__ */ jsx("p", { style: { margin: 0, fontSize: 18, lineHeight: 1.65, color: "var(--dark-text)" }, children: "Most of my work lives at the seams: the millisecond between tap and feedback, the retry that decides whether a meal arrives, the type system that keeps a small team honest. I care about Core Web Vitals because users  pay for every byte." })
                 ]
               }
             ),
@@ -1142,7 +1184,7 @@ function About() {
                     "span",
                     {
                       style: {
-                        fontSize: 13,
+                        fontSize: 15,
                         padding: "8px 14px",
                         border: "1px solid #2a2a2a",
                         color: "var(--dark-text)",
@@ -1167,8 +1209,8 @@ function About() {
                   gap: 24
                 },
                 children: BELIEFS.map(({ title, body }, i) => /* @__PURE__ */ jsxs("div", { style: { borderTop: "1px solid #2a2a2a", paddingTop: 14 }, children: [
-                  /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 22, color: "#fafaf8", lineHeight: 1.3 }, children: title }),
-                  /* @__PURE__ */ jsx("p", { style: { marginTop: 8, fontSize: 13, lineHeight: 1.55, color: "var(--dark-dim)" }, children: body })
+                  /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 24, color: "#fafaf8", lineHeight: 1.3 }, children: title }),
+                  /* @__PURE__ */ jsx("p", { style: { marginTop: 8, fontSize: 15, lineHeight: 1.55, color: "var(--dark-dim)" }, children: body })
                 ] }, i))
               }
             )
@@ -1218,7 +1260,7 @@ function Experience() {
           {
             as: "h2",
             className: "serif-h",
-            style: { fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 1, margin: "24px 0 40px" },
+            style: { fontSize: "clamp(42px, 7vw, 98px)", lineHeight: 1, margin: "24px 0 40px" },
             children: [
               "Where I've ",
               /* @__PURE__ */ jsx("em", { children: "worked" }),
@@ -1242,43 +1284,62 @@ function Experience() {
             children: [
               /* @__PURE__ */ jsx("div", { className: "kicker", style: { paddingTop: 6 }, children: e.dates }),
               /* @__PURE__ */ jsxs("div", { children: [
-                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em" }, children: e.role }),
-                /* @__PURE__ */ jsxs("div", { style: { marginTop: 8, fontSize: 13, color: "var(--dim)" }, children: [
+                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 38, lineHeight: 1, letterSpacing: "-0.02em" }, children: e.role }),
+                /* @__PURE__ */ jsxs("div", { style: { marginTop: 8, fontSize: 15, color: "var(--dim)" }, children: [
                   e.co,
                   " · ",
                   e.loc
                 ] })
               ] }),
-              /* @__PURE__ */ jsx("ul", { style: { listStyle: "none", padding: 0, margin: 0 }, children: e.bullets.map((b, j) => /* @__PURE__ */ jsxs(
-                "li",
-                {
-                  style: {
-                    fontSize: 14,
-                    lineHeight: 1.55,
-                    color: "#222",
-                    paddingLeft: 18,
-                    position: "relative",
-                    marginBottom: 10
-                  },
-                  children: [
-                    /* @__PURE__ */ jsx(
-                      "span",
-                      {
-                        style: {
-                          position: "absolute",
-                          left: 0,
-                          top: 10,
-                          width: 8,
-                          height: 1,
-                          background: "var(--ink)"
+              /* @__PURE__ */ jsxs("div", { children: [
+                /* @__PURE__ */ jsx("ul", { style: { listStyle: "none", padding: 0, margin: 0 }, children: e.bullets.map((b, j) => /* @__PURE__ */ jsxs(
+                  "li",
+                  {
+                    style: {
+                      fontSize: 16,
+                      lineHeight: 1.55,
+                      color: "#222",
+                      paddingLeft: 18,
+                      position: "relative",
+                      marginBottom: 10
+                    },
+                    children: [
+                      /* @__PURE__ */ jsx(
+                        "span",
+                        {
+                          style: {
+                            position: "absolute",
+                            left: 0,
+                            top: 10,
+                            width: 8,
+                            height: 1,
+                            background: "var(--ink)"
+                          }
                         }
-                      }
-                    ),
-                    b
-                  ]
-                },
-                j
-              )) })
+                      ),
+                      b
+                    ]
+                  },
+                  j
+                )) }),
+                e.productUrl && /* @__PURE__ */ jsx(
+                  "a",
+                  {
+                    href: e.productUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: "kicker",
+                    style: {
+                      display: "inline-block",
+                      marginTop: 18,
+                      color: "var(--ink)",
+                      textDecoration: "underline",
+                      textUnderlineOffset: 3
+                    },
+                    children: "View product ↗"
+                  }
+                )
+              ] })
             ]
           },
           i
@@ -1322,7 +1383,7 @@ function Writing() {
           {
             as: "h2",
             className: "serif-h",
-            style: { fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 1, margin: "24px 0 40px" },
+            style: { fontSize: "clamp(42px, 7vw, 98px)", lineHeight: 1, margin: "24px 0 40px" },
             children: [
               "Notes on ",
               /* @__PURE__ */ jsx("em", { children: "craft" }),
@@ -1347,7 +1408,7 @@ function Writing() {
               },
               children: [
                 /* @__PURE__ */ jsx("div", { className: "kicker", children: w.d }),
-                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 28, letterSpacing: "-0.02em", lineHeight: 1.2 }, children: w.t }),
+                /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 30, letterSpacing: "-0.02em", lineHeight: 1.2 }, children: w.t }),
                 /* @__PURE__ */ jsx("div", { className: "kicker writing-readtime", style: { textAlign: "right" }, children: w.read }),
                 /* @__PURE__ */ jsx("div", { className: "writing-arrow", style: { textAlign: "right" }, children: /* @__PURE__ */ jsx(Arrow$1, { size: 14 }) })
               ]
@@ -1360,10 +1421,10 @@ function Writing() {
   );
 }
 const SOCIAL_LINKS = [
-  { label: "GitHub", handle: "@ajao" },
-  { label: "LinkedIn", handle: "/in/ajao" },
-  { label: "X / Twitter", handle: "@ajao_dev" },
-  { label: "Read.cv", handle: "/ajao" }
+  { label: "GitHub", handle: "@ajaoseyi", href: portfolio.socials.github },
+  { label: "LinkedIn", handle: "/in/abdulsamad-ajao", href: portfolio.socials.linkedin },
+  { label: "X / Twitter", handle: "@Abdulsamad_O", href: portfolio.socials.twitter },
+  { label: "Dev.to", handle: "@ajaoseyi", href: portfolio.socials.devto }
 ];
 const LOOKING_FOR = [
   {
@@ -1445,7 +1506,7 @@ function Contact() {
             as: "h2",
             className: "serif-h",
             style: {
-              fontSize: "clamp(64px, 13vw, 220px)",
+              fontSize: "clamp(66px, 13vw, 222px)",
               lineHeight: 0.92,
               marginTop: 40
             },
@@ -1475,7 +1536,7 @@ function Contact() {
                   {
                     className: "serif-h",
                     style: {
-                      fontSize: "clamp(18px, 2.5vw, 36px)",
+                      fontSize: "clamp(20px, 2.5vw, 38px)",
                       marginTop: 8,
                       color: "#fafaf8",
                       wordBreak: "break-all"
@@ -1492,7 +1553,7 @@ function Contact() {
                       padding: "14px 22px",
                       border: "1px solid #fafaf8",
                       color: "#fafaf8",
-                      fontSize: 11,
+                      fontSize: 13,
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
                       transition: "background 0.2s, color 0.2s"
@@ -1520,7 +1581,7 @@ function Contact() {
                       "div",
                       {
                         className: "serif-h",
-                        style: { fontSize: 28, marginTop: 8, color: "#fafaf8", lineHeight: 1.2 },
+                        style: { fontSize: 30, marginTop: 8, color: "#fafaf8", lineHeight: 1.2 },
                         children: "Tell me about the work — I'll come prepared."
                       }
                     ),
@@ -1534,7 +1595,7 @@ function Contact() {
                           padding: "14px 22px",
                           background: "#fafaf8",
                           color: "#0a0a0a",
-                          fontSize: 11,
+                          fontSize: 13,
                           letterSpacing: "0.12em",
                           textTransform: "uppercase"
                         },
@@ -1551,16 +1612,19 @@ function Contact() {
                   style: { borderTop: "1px solid rgba(250,250,248,0.15)", paddingTop: 18 },
                   children: [
                     /* @__PURE__ */ jsx("div", { className: "kicker", style: { color: "var(--dark-dim)", marginBottom: 12 }, children: "Elsewhere" }),
-                    /* @__PURE__ */ jsx("ul", { style: { listStyle: "none" }, children: SOCIAL_LINKS.map(({ label, handle }) => /* @__PURE__ */ jsxs(
-                      "li",
+                    /* @__PURE__ */ jsx("ul", { style: { listStyle: "none" }, children: SOCIAL_LINKS.map(({ label, handle, href }) => /* @__PURE__ */ jsx("li", { style: { borderBottom: "1px dashed #2a2a2a" }, children: /* @__PURE__ */ jsxs(
+                      "a",
                       {
+                        href,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
                         style: {
                           display: "flex",
                           justifyContent: "space-between",
                           padding: "10px 0",
-                          borderBottom: "1px dashed #2a2a2a",
-                          fontSize: 13,
-                          color: "var(--dark-text)"
+                          fontSize: 15,
+                          color: "var(--dark-text)",
+                          textDecoration: "none"
                         },
                         children: [
                           /* @__PURE__ */ jsx("span", { children: label }),
@@ -1569,9 +1633,26 @@ function Contact() {
                             " ↗"
                           ] })
                         ]
-                      },
-                      label
-                    )) })
+                      }
+                    ) }, label)) }),
+                    /* @__PURE__ */ jsx(
+                      "a",
+                      {
+                        href: portfolio.resume,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        style: {
+                          display: "inline-block",
+                          marginTop: 16,
+                          fontSize: 13,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                          color: "var(--dark-dim)",
+                          textDecoration: "none"
+                        },
+                        children: "Download CV ↓"
+                      }
+                    )
                   ]
                 }
               )
@@ -1589,6 +1670,7 @@ function Contact() {
             children: /* @__PURE__ */ jsxs(
               "div",
               {
+                className: "contact-looking-for",
                 style: {
                   display: "grid",
                   gridTemplateColumns: "1fr 2fr",
@@ -1597,9 +1679,9 @@ function Contact() {
                 },
                 children: [
                   /* @__PURE__ */ jsx("div", { className: "kicker", style: { color: "var(--dark-dim)" }, children: "What I'm looking for" }),
-                  /* @__PURE__ */ jsx("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }, children: LOOKING_FOR.map(({ title, body }, i) => /* @__PURE__ */ jsxs("div", { children: [
-                    /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 24, color: "#fafaf8" }, children: title }),
-                    /* @__PURE__ */ jsx("p", { style: { marginTop: 6, fontSize: 13, color: "var(--dark-dim)", lineHeight: 1.55 }, children: body })
+                  /* @__PURE__ */ jsx("div", { className: "contact-looking-for-inner", style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }, children: LOOKING_FOR.map(({ title, body }, i) => /* @__PURE__ */ jsxs("div", { children: [
+                    /* @__PURE__ */ jsx("div", { className: "serif-h", style: { fontSize: 26, color: "#fafaf8" }, children: title }),
+                    /* @__PURE__ */ jsx("p", { style: { marginTop: 6, fontSize: 15, color: "var(--dark-dim)", lineHeight: 1.55 }, children: body })
                   ] }, i)) })
                 ]
               }
@@ -1622,12 +1704,12 @@ function Contact() {
             className: "kicker",
             children: [
               /* @__PURE__ */ jsx("span", { style: { color: "var(--dark-dim)" }, children: "© Abdulsamad Ajao MMXXVI · All rights reserved" }),
-              /* @__PURE__ */ jsx("span", { style: { color: "var(--dark-dim)" }, children: "Crafted in Lagos · Set in Inter & Instrument Serif" }),
+              /* @__PURE__ */ jsx("span", { style: { color: "var(--dark-dim)" }, children: "Crafted with care · Set in Inter & Instrument Serif" }),
               /* @__PURE__ */ jsx(
                 "button",
                 {
                   onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
-                  style: { color: "var(--dark-dim)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase" },
+                  style: { color: "var(--dark-dim)", fontSize: 13, letterSpacing: "0.14em", textTransform: "uppercase" },
                   children: "↑ Back to top"
                 }
               )
@@ -1639,16 +1721,43 @@ function Contact() {
   );
 }
 const meta$1 = () => [{
-  title: "Abdulsamad Ajao — Senior Frontend Engineer"
+  title: "Abdulsamad Portfolio"
 }, {
   name: "description",
-  content: "Frontend engineer building performant, accessible interfaces for fintech, food-tech, and Web3 platforms. Five years shipping production React across two continents."
+  content: "Abdulsamad Ajao is a Senior Frontend Engineer working internationally, crafting fast, accessible interfaces for fintech, food-tech, and Web3 products. Five years shipping production React across two continents."
+}, {
+  name: "author",
+  content: "Abdulsamad Ajao"
+}, {
+  name: "keywords",
+  content: "frontend engineer, React, TypeScript, remote, fintech, web3, UI engineer, portfolio"
 }, {
   property: "og:title",
-  content: "Abdulsamad Ajao — Senior Frontend Engineer"
+  content: "Abdulsamad Portfolio"
+}, {
+  property: "og:description",
+  content: "Senior Frontend Engineer working internationally — building performant, pixel-precise interfaces for fintech, food-tech, and Web3."
 }, {
   property: "og:type",
   content: "website"
+}, {
+  property: "og:image",
+  content: "/images/profile.png"
+}, {
+  property: "og:image:alt",
+  content: "Abdulsamad Ajao"
+}, {
+  name: "twitter:card",
+  content: "summary_large_image"
+}, {
+  name: "twitter:title",
+  content: "Abdulsamad Portfolio"
+}, {
+  name: "twitter:description",
+  content: "Senior Frontend Engineer working internationally — building performant, pixel-precise interfaces for fintech, food-tech, and Web3."
+}, {
+  name: "twitter:image",
+  content: "/images/profile.png"
 }];
 const _index = UNSAFE_withComponentProps(function Index() {
   return /* @__PURE__ */ jsxs(Fragment, {
@@ -1711,6 +1820,7 @@ function Arrow({
 const work_$id = UNSAFE_withComponentProps(function CaseStudy({
   loaderData
 }) {
+  var _a, _b, _c, _d, _e, _f, _g;
   const {
     project: p
   } = loaderData;
@@ -1748,19 +1858,19 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
             display: "flex",
             alignItems: "center",
             gap: 8,
-            fontSize: 13,
+            fontSize: 15,
             fontWeight: 600,
             color: "var(--ink)"
           },
           children: "← Back to index"
         }), /* @__PURE__ */ jsxs("span", {
           className: "kicker",
-          children: ["Case Study · ", p.n, " of 04"]
+          children: ["Case Study · ", p.n, " of 05"]
         }), /* @__PURE__ */ jsxs("a", {
           href: `https://${p.url}`,
           target: "_blank",
           rel: "noopener noreferrer",
-          className: "kicker",
+          className: "kicker cs-nav-visit",
           style: {
             color: "var(--ink)"
           },
@@ -1797,7 +1907,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
         as: "h1",
         className: "serif-h",
         style: {
-          fontSize: "clamp(64px, 13vw, 200px)",
+          fontSize: "clamp(66px, 13vw, 202px)",
           lineHeight: 0.92,
           marginTop: 32
         },
@@ -1808,7 +1918,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
         style: {
           gridColumn: "1 / span 8",
           marginTop: 24,
-          fontSize: "clamp(24px, 3.4vw, 52px)",
+          fontSize: "clamp(26px, 3.4vw, 54px)",
           fontStyle: "italic",
           lineHeight: 1.15,
           color: "#3a3a38",
@@ -1817,6 +1927,43 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
         children: p.tagline
       }), /* @__PURE__ */ jsx(Reveal, {
         delay: 2,
+        style: {
+          marginTop: 40
+        },
+        children: /* @__PURE__ */ jsxs("a", {
+          href: `https://${p.url}`,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          style: {
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "14px 28px",
+            background: "#0a0a0a",
+            border: "1px solid #0a0a0a",
+            fontSize: 15,
+            fontWeight: 600,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            color: "#f4f3ef",
+            textDecoration: "none",
+            transition: "background 0.2s, color 0.2s, border-color 0.2s"
+          },
+          onMouseEnter: (e) => {
+            e.currentTarget.style.background = "#2a2a2a";
+            e.currentTarget.style.borderColor = "#2a2a2a";
+          },
+          onMouseLeave: (e) => {
+            e.currentTarget.style.background = "#0a0a0a";
+            e.currentTarget.style.borderColor = "#0a0a0a";
+          },
+          children: ["View Project ", /* @__PURE__ */ jsx(Arrow, {
+            size: 13
+          })]
+        })
+      }), /* @__PURE__ */ jsx(Reveal, {
+        delay: 2,
+        className: "cs-outcomes-grid",
         style: {
           marginTop: 56,
           paddingTop: 18,
@@ -1829,7 +1976,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
           children: [/* @__PURE__ */ jsx("div", {
             className: "serif-h",
             style: {
-              fontSize: 64,
+              fontSize: 66,
               lineHeight: 1,
               letterSpacing: "-0.03em"
             },
@@ -1843,17 +1990,17 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
           })]
         }, i))
       })]
-    }), /* @__PURE__ */ jsx("section", {
+    }), ((_a = p.images) == null ? void 0 : _a.hero) && /* @__PURE__ */ jsx("section", {
       style: {
         maxWidth: "var(--max-w)",
         margin: "0 auto",
         padding: "64px var(--pad-x) 0"
       },
       children: /* @__PURE__ */ jsxs("div", {
+        className: "cs-hero-visual",
         style: {
           height: 560,
           background: "var(--invert-bg)",
-          color: "var(--invert-ink)",
           position: "relative",
           overflow: "hidden",
           display: "flex",
@@ -1861,49 +2008,33 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
           justifyContent: "center"
         },
         children: [/* @__PURE__ */ jsx("div", {
-          className: "serif-h",
+          className: "serif-h cs-hero-watermark",
           style: {
             position: "absolute",
             top: -60,
             right: -40,
-            fontSize: 720,
+            fontSize: 722,
             lineHeight: 0.8,
             color: "#161616",
             userSelect: "none",
             pointerEvents: "none"
           },
           children: p.n
-        }), /* @__PURE__ */ jsxs("div", {
+        }), /* @__PURE__ */ jsx("img", {
+          src: p.images.hero,
+          alt: `${p.name} app screenshot`,
           style: {
-            position: "relative",
-            zIndex: 2,
-            textAlign: "center"
-          },
-          children: [/* @__PURE__ */ jsx("div", {
-            className: "kicker",
-            style: {
-              color: "var(--dark-dim)",
-              marginBottom: 16
-            },
-            children: "Hero capture — placeholder"
-          }), /* @__PURE__ */ jsx("div", {
-            className: "serif-h",
-            style: {
-              fontSize: 96,
-              color: "#fafaf8"
-            },
-            children: p.name
-          }), /* @__PURE__ */ jsx("div", {
-            className: "kicker",
-            style: {
-              color: "var(--dark-dim)",
-              marginTop: 16
-            },
-            children: "Drop a product screen here"
-          })]
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            zIndex: 2
+          }
         })]
       })
     }), /* @__PURE__ */ jsxs("section", {
+      className: "cs-three-col",
       style: {
         maxWidth: "var(--max-w)",
         margin: "0 auto",
@@ -1933,7 +2064,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
         }), /* @__PURE__ */ jsx("p", {
           style: {
             marginTop: 18,
-            fontSize: 17,
+            fontSize: 19,
             lineHeight: 1.6,
             color: "#222"
           },
@@ -1960,7 +2091,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
               justifyContent: "space-between",
               padding: "8px 0",
               borderBottom: "1px dashed var(--faint-rule)",
-              fontSize: 13,
+              fontSize: 15,
               color: "#222"
             },
             children: [/* @__PURE__ */ jsx("span", {
@@ -1988,6 +2119,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
         },
         children: "What I shipped"
       }), /* @__PURE__ */ jsx("div", {
+        className: "cs-three-col",
         style: {
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
@@ -2004,14 +2136,14 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
             children: [/* @__PURE__ */ jsx("div", {
               className: "serif-h",
               style: {
-                fontSize: 56,
+                fontSize: 58,
                 color: "var(--dim)"
               },
               children: String(i + 1).padStart(2, "0")
             }), /* @__PURE__ */ jsx("p", {
               style: {
                 marginTop: 14,
-                fontSize: 16,
+                fontSize: 18,
                 lineHeight: 1.55,
                 color: "#222"
               },
@@ -2020,35 +2152,55 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
           })
         }, i))
       })]
-    }), /* @__PURE__ */ jsx("section", {
+    }), (((_b = p.images) == null ? void 0 : _b.logo) || ((_d = (_c = p.images) == null ? void 0 : _c.detail) == null ? void 0 : _d.length)) && /* @__PURE__ */ jsx("section", {
       style: {
         maxWidth: "var(--max-w)",
         margin: "0 auto",
         padding: "80px var(--pad-x) 0"
       },
-      children: /* @__PURE__ */ jsx("div", {
+      children: /* @__PURE__ */ jsxs("div", {
+        className: "cs-two-col",
         style: {
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: 16
         },
-        children: [false, true].map((light, i) => /* @__PURE__ */ jsx("div", {
+        children: [((_e = p.images) == null ? void 0 : _e.logo) && /* @__PURE__ */ jsx("div", {
           style: {
             height: 360,
-            background: light ? "#e8e6e0" : "var(--invert-bg)",
-            color: light ? "var(--ink)" : "var(--invert-ink)",
+            background: "var(--invert-bg)",
             display: "flex",
-            alignItems: "flex-end",
-            padding: 28
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 48,
+            overflow: "hidden"
           },
-          children: /* @__PURE__ */ jsxs("span", {
-            className: "kicker",
+          children: /* @__PURE__ */ jsx("img", {
+            src: p.images.logo,
+            alt: `${p.name} logo`,
             style: {
-              color: light ? "var(--dim)" : "var(--dark-dim)"
-            },
-            children: ["Detail ", i + 1, " — placeholder"]
+              maxHeight: 120,
+              maxWidth: "70%",
+              objectFit: "contain"
+            }
           })
-        }, i))
+        }), (_g = (_f = p.images) == null ? void 0 : _f.detail) == null ? void 0 : _g.map((src) => /* @__PURE__ */ jsx("div", {
+          style: {
+            height: 360,
+            background: "var(--invert-bg)",
+            overflow: "hidden"
+          },
+          children: /* @__PURE__ */ jsx("img", {
+            src,
+            alt: `${p.name} detail`,
+            style: {
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              objectPosition: "center top"
+            }
+          })
+        }, src))]
       })
     }), /* @__PURE__ */ jsx("section", {
       style: {
@@ -2059,7 +2211,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
       children: /* @__PURE__ */ jsxs(Reveal, {
         className: "serif-h",
         style: {
-          fontSize: "clamp(32px, 4.6vw, 72px)",
+          fontSize: "clamp(34px, 4.6vw, 74px)",
           lineHeight: 1.15,
           fontStyle: "italic"
         },
@@ -2086,6 +2238,7 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
         onMouseEnter: (e) => e.currentTarget.style.background = "var(--invert-bg)",
         onMouseLeave: (e) => e.currentTarget.style.background = "transparent",
         children: /* @__PURE__ */ jsxs("div", {
+          className: "next-project-inner",
           style: {
             maxWidth: "var(--max-w)",
             margin: "0 auto",
@@ -2117,14 +2270,14 @@ const work_$id = UNSAFE_withComponentProps(function CaseStudy({
                 mixBlendMode: "difference",
                 color: "white"
               },
-              children: [next.n, " of 04"]
+              children: [next.n, " of 05"]
             })
           }), /* @__PURE__ */ jsxs("h2", {
             className: "serif-h",
             style: {
               gridColumn: "span 12",
               margin: "24px 0 0",
-              fontSize: "clamp(64px, 13vw, 200px)",
+              fontSize: "clamp(66px, 13vw, 202px)",
               lineHeight: 0.9,
               mixBlendMode: "difference",
               color: "white"
@@ -2145,7 +2298,7 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   loader,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-BTIMp5NP.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-CLLUaLie.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/_index-D-4lWCVC.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js", "/assets/Reveal-DLa2nrIz.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/work.$id": { "id": "routes/work.$id", "parentId": "root", "path": "work/:id", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/work._id-C8jv7wVd.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js", "/assets/Reveal-DLa2nrIz.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-9ef71708.js", "version": "9ef71708", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-BTIMp5NP.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-B38kpUl-.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/_index-BNvjFNbq.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js", "/assets/Reveal-Bfk8qU6q.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/work.$id": { "id": "routes/work.$id", "parentId": "root", "path": "work/:id", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/work._id-CbGYW-s0.js", "imports": ["/assets/chunk-5KNZJZUH-Bx-f-fMl.js", "/assets/Reveal-Bfk8qU6q.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-dcd15e61.js", "version": "dcd15e61", "sri": void 0 };
 const assetsBuildDirectory = "build\\client";
 const basename = "/";
 const future = { "unstable_optimizeDeps": false, "v8_passThroughRequests": false, "unstable_trailingSlashAwareDataRequests": false, "unstable_previewServerPrerendering": false, "v8_middleware": false, "v8_splitRouteModules": false, "v8_viteEnvironmentApi": false };
